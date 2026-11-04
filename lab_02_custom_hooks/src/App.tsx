@@ -1,4 +1,5 @@
-import DebounceSearchDemo from "./components/DebounceSearchDemo/DebounceSearchDemo"
+import DebounceSearchDemo from "./components/DebounceSearchDemo/DebounceSearchDemo";
+import "./App.css"
 
 
 export default function App(){

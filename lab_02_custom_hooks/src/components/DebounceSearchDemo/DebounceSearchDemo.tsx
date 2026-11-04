@@ -18,10 +18,10 @@ export default function DebounceSearchDemo() {
 
 
     return (
-        <div>
+        <div className="debounce-search">
             <h2>Debounce Search Demo</h2>
             <input
-                type="text"
+                type="text"                
                 placeholder="Enter your search..."
                 value={searchText}
                 onChange={(event) => setSearchText(event.target.value)}
