@@ -4,7 +4,7 @@ import DebounceSearchDemo from "./components/DebounceSearchDemo/DebounceSearchDe
 export default function App(){
   return(
     <div>
-      Hello World
+      
       <DebounceSearchDemo/>
       
     </div>

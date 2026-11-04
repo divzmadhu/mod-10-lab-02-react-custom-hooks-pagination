@@ -30,11 +30,17 @@ export default function DebounceSearchDemo() {
             <p>Debounced Value (after 500 ms) : {debouncedValue}</p>
             <p>Simulated Search Results :</p>
             <div>
-                {searchResults.map((fruit) => (
-                    <p key={fruit.name}>
-                        {fruit.name} - Family: {fruit.family} - Calories: {fruit.calories} - Sugar: {fruit.sugar}g
-                    </p>
-                ))}
+                {debouncedValue.trim() === "" ? (
+                    <p>Type to see the results.</p>
+                ) : searchResults.length > 0 ? (
+                    searchResults.map((fruit) => (
+                        <p key={fruit.name}>
+                            {fruit.name} - Family: {fruit.family} - Calories: {fruit.calories} - Sugar: {fruit.sugar}g
+                        </p>
+                    ))
+                ) : (
+                    <p>No fruits found.</p>
+                )}
             </div>
         </div>
 
