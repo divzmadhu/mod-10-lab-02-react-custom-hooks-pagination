@@ -6,3 +6,11 @@
   border-radius: 8px;
 
 }
+.delay-control input {
+    width: 65px;
+    border: none;
+    background: transparent;
+    color: inherit;
+    font-size: inherit;
+    outline: none;
+}

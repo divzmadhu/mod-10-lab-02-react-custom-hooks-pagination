@@ -7,7 +7,8 @@ import fruits from "../../data/fruits";
 export default function DebounceSearchDemo() {
     const [searchText, setSearchText] = useState("");
     const [searchResults, setSearchResults] = useState<typeof fruits>([]);
-    const debouncedValue = useDebounce(searchText, 500);
+    const [delay, setDelay] = useState(500);
+    const debouncedValue = useDebounce(searchText, delay);
 
     useEffect(() => {
         const results = fruits.filter((fruit) =>
@@ -16,12 +17,31 @@ export default function DebounceSearchDemo() {
         setSearchResults(results);
     }, [debouncedValue]);
 
+    function increaseDelay() {
+        setDelay(delay + 100);
+    }
+
+    function decreaseDelay() {
+        setDelay(delay - 100);
+    }
+
 
     return (
         <div className="debounce-search">
             <h2>Debounce Search Demo</h2>
+            <div className="delay-control">
+                <label>Debounce Delay (ms):</label>
+
+                <input
+                    type="number"
+                    value={delay}
+                    onChange={(event) => setDelay(Number(event.target.value))}
+                    min="100"
+                    step="100"
+                />
+            </div>
             <input
-                type="text"                
+                type="text"
                 placeholder="Enter your search..."
                 value={searchText}
                 onChange={(event) => setSearchText(event.target.value)}
