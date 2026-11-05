@@ -51,7 +51,7 @@ export default function DebounceSearchDemo() {
             <p>Simulated Search Results :</p>
             <div>
                 {debouncedValue.trim() === "" ? (
-                    <p>Type to see the results.</p>
+                    <p>Type any fruits to see the results.</p>
                 ) : searchResults.length > 0 ? (
                     searchResults.map((fruit) => (
                         <p key={fruit.name}>
