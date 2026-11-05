@@ -14,7 +14,11 @@ export default function PaginationDemo() {
         currentPage,
         totalPages,
         startIndex,
-        endIndex
+        endIndex,
+        nextPage,
+        prevPage,
+        canNextPage,
+        canPrevPage
     } = usePagination(students.length, itemsPerPage);
 
     const currentStudents = students.slice(startIndex, endIndex);
@@ -33,6 +37,17 @@ export default function PaginationDemo() {
             </div>
 
             <p>Page {currentPage} of {totalPages}</p>
+
+            <div>
+                <button onClick={prevPage} disabled={!canPrevPage}>
+                    Previous
+                </button>
+
+                <button onClick={nextPage} disabled={!canNextPage}>
+                    Next
+                </button>
+            </div>
+
 
         </div>
     );
